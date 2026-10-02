@@ -1,16 +1,22 @@
 #include <stdio.h>
-#define MAX 12
+#include <stdlib.h>
 
-int seguidores;
+#define MAX 20
+
 char *mensaje2=NULL;
-static int maxValue;
 char *mensaje="HOLA MUNDO";
 
 int main(int argc, char **argv) {
-    int i;
-    int j=5;
+
     printf("%s", mensaje);
     mensaje2=(char *)malloc(sizeof(char)*MAX);
+
+    if (mensaje2==NULL) {
+        printf("Error al asignar memoria");
+        return 1;
+    }
+
+    free(mensaje2);
 
     return 0;
 }
